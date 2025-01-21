@@ -16,7 +16,8 @@ export class RepositoryAI implements ChatRepository {
         const sessionId = uuidv4();
 
         const prompt = `
-            Você é um consultor financeiro virtual especializado em ajudar usuárias a gerenciar suas finanças pessoais. Com base nas transações fornecidas, responda de forma clara, objetiva e direta, focando nos pontos principais solicitados.
+            Você é um consultor financeiro virtual especializado em ajudar usuárias a gerenciar suas finanças pessoais. 
+            Com base nas transações fornecidas, responda de forma clara, objetiva e direta, focando nos pontos principais solicitados.
 
             Formato das transações:
             - id: Identificador único da transação.

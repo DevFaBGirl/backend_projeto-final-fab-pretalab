@@ -14,7 +14,7 @@ const { despesaController, chatController } = configureDependencies();
 
 app.post('/despesas', (req, res) => despesaController.create(req, res));
 app.get('/despesas/:userId', (req, res) => despesaController.getAll(req, res));
-app.patch('/despesas/:id', (req, res) => despesaController.update(req, res)); // Nova rota para PATCH
+app.patch('/despesas/:id', (req, res) => despesaController.update(req, res)); //rota para PATCH
 app.post('/chat', (req, res) => chatController.open(req, res));
 
 if (require.main === module) {

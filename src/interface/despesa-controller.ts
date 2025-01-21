@@ -8,7 +8,7 @@ export class DespesaController {
   constructor(
     private createDespesaUseCase: CreateDespesaUseCase,
     private getDespesasByUserUseCase: GetDespesasByUserUseCase,
-    private updateDespesaUseCase: UpdateDespesaUseCase // Novo caso de uso
+    private updateDespesaUseCase: UpdateDespesaUseCase // use case update
   ) {}
 
   create(req: Request, res: Response) {
@@ -26,12 +26,13 @@ export class DespesaController {
   async update(req: Request, res: Response) {
     try {
       const { id } = req.params;
-      const updates = req.body; 
-
-      const updatedDespesa = await this.updateDespesaUseCase.execute(id, updates); 
-      res.status(200).json(updatedDespesa); 
+      const updates = req.body;
+  
+      const updatedDespesa = await this.updateDespesaUseCase.execute(id, updates);
+      res.status(200).json(updatedDespesa);
     } catch (error) {
-      res.status(400).json({ message: error.message }); 
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      res.status(400).json({ message: errorMessage });
     }
   }
 }

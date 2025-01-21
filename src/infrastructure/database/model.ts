@@ -1,5 +1,6 @@
 import { model, Schema } from 'mongoose'
 
+
 const DespesaSchema = new Schema({
     descricao: {
         type: String,
