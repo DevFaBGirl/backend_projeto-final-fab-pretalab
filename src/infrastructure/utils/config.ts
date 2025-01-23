@@ -1,7 +1,7 @@
 import { RepositoryData } from '../database/repository';
 import { CreateDespesaUseCase } from '../../application/use-cases/create-despesa-use-case';
 import { GetDespesasByUserUseCase } from '../../application/use-cases/get-despesas-by-user-use-case';
-import { UpdateDespesaUseCase } from '../../application/use-cases/update-despesa-use-case'; // Import do use case de atualização
+import { UpdateDespesaUseCase } from '../../application/use-cases/update-despesa-use-case'; 
 import { DespesaController } from '../../interface/despesa-controller';
 import { RepositoryAI } from '../genai/repository';
 import { ChatController } from '../../interface/chat-controller';

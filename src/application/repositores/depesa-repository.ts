@@ -5,7 +5,6 @@ export interface DespesaRepository {
     findAll(): Promise<Array<Despesa>>;
     findByUserId(userId: string): Promise<Despesa[]>;
     findById(id: string): Promise<Despesa | null>;
-    findById(id: string): Promise<Despesa | null>;
     update(id: string, updates: Partial<Despesa>): Promise<Despesa | null>;    
 }
 

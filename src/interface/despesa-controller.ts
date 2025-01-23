@@ -17,9 +17,15 @@ export class DespesaController {
     res.status(201).json(despesa);
   }
 
-  async getAll(req: Request, res: Response) {
+  async getById(req: Request, res: Response) {
     const userId = req.params.userId;
     const despesas = await this.getDespesasByUserUseCase.execute(userId);
+    res.json(despesas);
+  }
+
+
+  async getAll(req: Request, res: Response) {
+    const despesas = await this.getDespesasByUserUseCase.find();
     res.json(despesas);
   }
 
@@ -31,7 +37,7 @@ export class DespesaController {
       const updatedDespesa = await this.updateDespesaUseCase.execute(id, updates);
       res.status(200).json(updatedDespesa);
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      const errorMessage = error instanceof Error ? error.message : 'erro inesperado aconteceu';
       res.status(400).json({ message: errorMessage });
     }
   }
