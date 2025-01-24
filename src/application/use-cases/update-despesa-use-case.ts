@@ -8,16 +8,23 @@ export class UpdateDespesaUseCase {
    
     const despesa = await this.despesaRepository.findById(despesaId);
 
+    console.log('Despesa:', despesa);
+
     if (!despesa) {
       throw new Error('Despesa não encontrada.');
     }
     
-    const updatedDespesa = {
+    const updatedDespesa: Despesa = {
       ...despesa,
       ...updates,
+      id: despesaId,
     };
     
-    await this.despesaRepository.save(updatedDespesa);
+    await this.despesaRepository.update(despesaId, updatedDespesa);
+
+    if(!updatedDespesa) {
+      throw new Error('Erro ao atualizar a despesa.');
+    }
 
     return updatedDespesa;
   }

@@ -8,10 +8,13 @@ dotenv.config();
 export const app = express();
 connectDB();
 app.use(express.json());
-app.use(cors( {
-  origin: "https://projeto-final-fab-pretalab.vercel.app",}
-  
-));
+
+const corsOptions = {
+  //origin: "https://projeto-final-fab-pretalab.vercel.app",
+  origin: 'http://localhost:5174',
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 const { despesaController, chatController } = configureDependencies();
 
