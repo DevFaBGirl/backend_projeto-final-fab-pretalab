@@ -77,4 +77,9 @@ export class RepositoryData implements DespesaRepository {
       userId: despesa.userId,
     } as Despesa;
   }
+
+  // Novo método: delete
+  async delete(id: string): Promise<void> {
+    await DespesaModel.findByIdAndDelete(id);
+  }
 }

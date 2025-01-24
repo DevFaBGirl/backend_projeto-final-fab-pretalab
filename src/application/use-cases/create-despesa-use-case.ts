@@ -6,12 +6,13 @@ export class CreateDespesaUseCase {
         private despesaRepository: DespesaRepository,
     ){}
 
-    execute(despesaParams: Partial<Despesa>): Despesa {
+    async execute(despesaParams: Partial<Despesa>): Promise<Despesa> {
         const despesa = {
-            ...despesaParams
+          ...despesaParams,
         } as Despesa;
-
-        this.despesaRepository.save(despesa);
+      
+        await this.despesaRepository.save(despesa);
         return despesa;
-    } 
+      }
+      
 }
