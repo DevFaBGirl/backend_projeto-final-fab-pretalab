@@ -11,7 +11,7 @@ app.use(express.json());
 
 const corsOptions = {
   origin: 'https://projeto-final-fab-pretalab.vercel.app', // URL do front-end //origin: 'http://localhost:5174',
-  methods: 'GET,POST,PUT,PATH, DELETE',  // Métodos 
+  methods: 'GET,POST,PUT,PATCH,DELETE,OPTIONS',  // Métodos 
   allowedHeaders: 'Content-Type,Authorization',  
 };
 
