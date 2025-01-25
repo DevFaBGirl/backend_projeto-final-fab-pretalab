@@ -10,7 +10,7 @@ connectDB();
 app.use(express.json());
 
 const corsOptions = {
-  origin: "https://projeto-final-fab-pretalab.vercel.app",
+  origin: "https://projeto-final-fab-pretalab.vercel.app/",
   //origin: 'http://localhost:5174',
   optionsSuccessStatus: 200,
 };
