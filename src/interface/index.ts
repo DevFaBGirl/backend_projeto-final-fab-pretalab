@@ -10,10 +10,11 @@ connectDB();
 app.use(express.json());
 
 const corsOptions = {
-  origin: "https://projeto-final-fab-pretalab.vercel.app/",
-  //origin: 'http://localhost:5174',
-  optionsSuccessStatus: 200,
+  origin: 'https://projeto-final-fab-pretalab.vercel.app', // URL do front-end //origin: 'http://localhost:5174',
+  methods: 'GET,POST,PUT,DELETE',  // Métodos 
+  allowedHeaders: 'Content-Type,Authorization',  
 };
+
 app.use(cors(corsOptions));
 
 const { despesaController, chatController } = configureDependencies();
